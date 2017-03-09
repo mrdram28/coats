@@ -1,5 +1,7 @@
 package coats.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,9 +18,9 @@ public class UserController {
     UserRepository userRepository;
 	
 	 @RequestMapping(value = "/users",method = RequestMethod.GET)
-	 public String usersList(Model model){
-	        model.addAttribute("users", userRepository.findAll());
-	        return "users";
+	 public List<User> usersList(){
+	        List<User> users = (List<User>) userRepository.findAll();
+	        return users;
 	    }
 	 
 	 @RequestMapping(value = "/saveuser", method = RequestMethod.POST)
