@@ -41,6 +41,7 @@
     </dependencies>
 
     <properties>
+    	<start-class>coats.Application</start-class>
         <java.version>1.8</java.version>
     </properties>
 
